@@ -1,0 +1,21 @@
+.body {
+	background: linear-gradient(21deg, #dd03e4, #5611ec);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 0;
+    width: calc((282px * 3) + (17px * 2));
+    max-width: 1280px;
+    min-width: 320px;
+    height: calc(100vh - 45px);
+}
+@media screen and (max-width: 900px) {
+    .body {
+        width: calc((282px * 2) + (17px * 1));
+    }
+}
+@media screen and (max-width: 600px) {
+    .body {
+        width: calc(282px + (19px * 2));
+    }
+}

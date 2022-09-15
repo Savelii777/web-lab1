@@ -1,0 +1,8 @@
+.start-button{
+    position: absolute;
+    top: 25vh;
+    width: 100px;
+    height: 100px;
+    background-image: url('../../images/start-button.svg');
+    background-size: contain;
+}
