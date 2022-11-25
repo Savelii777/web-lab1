@@ -4,6 +4,7 @@ import {animate} from './scripts/animation'
 import {interectPopup} from './scripts/popup'
 import {Data} from './scripts/data'
 import {getDataFromFirebase} from './scripts/data'
+import { async } from "@firebase/util"
 
 
 const buttonEdit = document.querySelector('.popup__edit-button');
@@ -17,61 +18,28 @@ let inputCheckBox = 0;
 export let gettingData = [];
 getDataFromFirebase()
 window.addEventListener('load', Data.renderList)
-
-
-
-
-
-
-
-
-
-
-jQuery.ajax({
-  type: "POST",
-  url: '../src/index.php',
-  dataType: 'json',
-  data: {functionname: 'add', arguments: [1, 2]},
-
-  success: function (obj, textstatus) {
-                if( !('error' in obj) ) {
-                    yourVariable = obj.result;
-                    console.log('nssssj')
-                }
-                else {
-                    console.log(obj.error);
-                }
-          }
-});
-
-
-
-
+popupForm.addEventListener('submit', saveInfo);
 
 function saveInfo(evt) {
-    evt.preventDefault();
-  
-
-    const data = {
-
-        xValue: Number($("input[type=checkbox][name=xValue]:checked").val()),
-        yValue: Number(popupInputText.value.trim()),
-        rValue: Number(popupInputSelector.value),
-        date: new Date().toJSON()
-    } 
-    if($("input[type=checkbox][name=xValue]:checked").val() === undefined)
-    {
-      data.xValue = 0
-    }
-    Data.create(data);
-    gettingData = []
-    getDataFromFirebase()
-    popupInputText.value = "";
+    let form = document.forms[0];
+let formData = new FormData(form);
+let search = new URLSearchParams(formData);
+let Url = 'http://tetst/?'+search.toString();
+    $.get(Url, function(dataFromPHP, status){
+            const arrOfPhpData = dataFromPHP.split(' ')
+                Data.create(arrOfPhpData);
+                gettingData = []
+                getDataFromFirebase()
+           })
+  popupInputText.value = ''
+  popupSubmitButton.classList.add('popup__save-button_type_inactive')
+  popupSubmitButton.disabled = true
   }
  (function(){
     animate();
 })();
-popupForm.addEventListener('submit', saveInfo);
+
+
 interectPopup(buttonEdit, popup, buttonClose);
 
 console.log('program is working')

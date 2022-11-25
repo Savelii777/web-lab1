@@ -1,0 +1,21 @@
+[debug] [2022-10-08T07:37:17.492Z] ----------------------------------------------------------------------
+[debug] [2022-10-08T07:37:17.495Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\savva\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-10-08T07:37:17.496Z] CLI Version:   11.14.1
+[debug] [2022-10-08T07:37:17.496Z] Platform:      win32
+[debug] [2022-10-08T07:37:17.496Z] Node Version:  v16.17.1
+[debug] [2022-10-08T07:37:17.497Z] Time:          Sat Oct 08 2022 10:37:17 GMT+0300 (Москва, стандартное время)
+[debug] [2022-10-08T07:37:17.498Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-08T07:37:17.507Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-08T07:37:17.508Z] > authorizing via signed-in user (savva.2004.02.27@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\OpenServer\domains\web-lab1
+
